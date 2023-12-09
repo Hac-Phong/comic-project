@@ -10,7 +10,7 @@ const ListUpdate = async () => {
   const updatelistpage = [...updatelistpage_1, ...updatelistpage_2]
 
   return (
-    <div className="w-9/12 px-3 ">
+    <div className="w-full md:w-9/12 px-3 ">
       <div className="z-50 py-4 bg-gradient-to-r from-[#5d0914] to-transparent mb-5 flex justify-between items-center pl-3">
         <p className="text-lg uppercase font-semibold">Recently Update</p>
         <div className="bg-yellow-400 rounded-l-2xl hover:rounded-l-full font-medium flex items-center hover:px-4 transition-all duration-300 ease-in px-2 text-black py-1.5">
@@ -18,7 +18,7 @@ const ListUpdate = async () => {
           <i className="bi bi-chevron-right  text-sm"></i>
         </div>
       </div>
-      <div className="grid grid-cols-4 gap-2">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
         {updatelistpage.slice(0, 16).map((updatelist) => (
           <CardImg key={updatelist.id} props={updatelist} />
         ))}

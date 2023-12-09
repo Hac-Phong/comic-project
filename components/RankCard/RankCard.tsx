@@ -20,7 +20,7 @@ const RankCard = async () => {
   )
 
   return (
-    <div className="w-4/12 overflow-hidden rounded-b-lg text-white bg-gradient-to-br from-[#dc091480] to-transparent mr-3">
+    <div className="w-full md:w-4/12 overflow-hidden rounded-b-lg text-white bg-gradient-to-br from-[#dc091480] to-transparent mr-3">
       <div className="w-full">
         <h1 className="text-2xl  uppercase font-semibold bg-gradient-to-r from-[#dc091480] to-transparent px-3 py-4 flex items-center">
           Hotest

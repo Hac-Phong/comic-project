@@ -4,7 +4,7 @@ import React from 'react'
 
 const NavBar = () => {
   return (
-    <nav className="text-white px-8 py-5 flex items-center sticky bg-accent-content z-50 top-0">
+    <nav className="text-white  px-8 py-5 hidden md:flex items-center sticky bg-accent-content z-50 top-0">
       <Link href="/">
         <Image
           src="https://mangaplus.shueisha.co.jp/img/web_logo_190118_light-txt.06756983.png"
