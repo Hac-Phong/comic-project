@@ -10,7 +10,7 @@ interface ImageChapterProps {
 }
 const ImageChapter = ({ propsimg }: ImageChapterProps) => {
   const [err, setErr] = useState<boolean>(false)
-  const imgload = '/error.png'
+  const imgload = '/loading.png'
   return (
     <div>
       <Image
