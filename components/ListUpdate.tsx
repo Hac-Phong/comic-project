@@ -10,7 +10,7 @@ const ListUpdate = async () => {
   const updatelistpage = [...updatelistpage_1, ...updatelistpage_2]
 
   return (
-    <div className="w-full md:w-9/12 px-3 ">
+    <div className="w-full lg:w-9/12 px-3 ">
       <div className="z-50 py-4 bg-gradient-to-r from-[#5d0914] to-transparent mb-5 flex justify-between items-center pl-3">
         <p className="text-lg uppercase font-semibold">Recently Update</p>
         <div className="bg-yellow-400 rounded-l-2xl hover:rounded-l-full font-medium flex items-center hover:px-4 transition-all duration-300 ease-in px-2 text-black py-1.5">

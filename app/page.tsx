@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className=" text-white flex flex-col w-full">
       <Bannar />
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col lg:flex-row">
         <ListUpdate />
         <RankCard />
       </div>
