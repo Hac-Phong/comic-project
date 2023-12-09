@@ -22,6 +22,29 @@ const Carousel = ({ items, autoplay, data, h1 }) => {
     autoplay: autoplay,
     // speed: 3000,
     autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 649,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+    ],
   }
   return (
     <div className="text-white my-5 bg-accent-content overflow-hidden">
