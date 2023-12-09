@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+.des {
+  background: linear-gradient(0deg, #000 55%, transparent);
+}
+
+.brd {
+  background: linear-gradient(180deg, #000, transparent);
+}
+.slick-track {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.list::-webkit-scrollbar {
+  width: 2px;
+  /* display: none; */
+}
+
+.list::-webkit-scrollbar-thumb {
+  background-color: rgba(244, 246, 248, 0.2);
+}
+
+.list:hover::-webkit-scrollbar {
+  display: inline !important;
+}
+.list {
+  border-right-color: rgba(244, 246, 248, 0.05);
+}
