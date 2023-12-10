@@ -1,5 +1,6 @@
-import React from 'react'
+'use client'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 interface ComicChapterListProps {
   props: {
     title: string
@@ -22,19 +23,30 @@ interface ComicChapterListProps {
   }
 }
 const ComicChapterList = ({ props }: ComicChapterListProps) => {
-  const chapters = props.chapters
-
+  // const chapters = props.chapters
+  const [eps, setEps] = useState(props.chapters)
+  const [isShow, setIsShow] = useState<boolean>(false)
+  const handleIsShow = () => {
+    setEps((prev) => prev.reverse())
+    console.log(eps)
+    setIsShow(true)
+  }
   return (
     <div className="flex flex-col">
       <p className="text-[#bebebe] uppercase text-lg mt-8 border-b border-b-[#bebebe] pb-2">
         CHAPTER LIST
       </p>
       <button className=" bg-gradient-to-l py-3 pr-2 from-[#73262ae6] to-transparent flex justify-end">
-        <i className="bi bi-sort-down text-white text-3xl"></i>
+        <i
+          onClick={handleIsShow}
+          className={` text-white text-3xl ${
+            isShow ? 'bi bi-sort-down-alt' : 'bi bi-sort-down-alt'
+          }`}
+        ></i>
       </button>
       {/* List */}
       <div className="grid list  grid-cols-4 gap-1.5 mt-1 max-h-96 overflow-y-auto">
-        {chapters.map((chapter) => (
+        {eps.map((chapter) => (
           <Link
             href={`/comics/${props.id}/chapters/${chapter.id}`}
             key={chapter.id}
