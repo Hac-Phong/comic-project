@@ -28,12 +28,7 @@ const ComicChapterList = ({ props }: ComicChapterListProps) => {
   const [isShow, setIsShow] = useState<boolean>(false)
   const handleIsShow = () => {
     setEps([...props.chapters].reverse())
-    // setIsShow(true)
   }
-  // useEffect(() => {
-  //   setIsShow(false)
-  // }, [])
-  // console.log(isShow)
 
   return (
     <div className="flex flex-col">
