@@ -5,12 +5,7 @@ import ComicDetail from '@/components/ComicPage/ComicDetail'
 import ComicChapterList from '@/components/ComicPage/ComicChapterList'
 import { useFetchData } from '@/composables/fetchData'
 import { notFound } from 'next/navigation'
-
-interface ComicIdProps {
-  params: {
-    comicid: string
-  }
-}
+import { ComicIdProps } from '@/types/types'
 
 const ComicId = async ({ params }: ComicIdProps) => {
   const [comicdetail, recomend] = await Promise.all([

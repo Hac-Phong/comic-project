@@ -2,7 +2,6 @@ import { useFetchData } from '@/composables/fetchData'
 import Image from 'next/image'
 import React from 'react'
 import Link from 'next/link'
-import ImgCard from '../Card/ImgCard'
 interface RankCardProps {
   id: string
   title: string

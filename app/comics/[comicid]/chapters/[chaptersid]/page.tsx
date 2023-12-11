@@ -1,44 +1,17 @@
 import ImageChapter from '@/components/Chapter/ImageChapter'
+import NextPrevChap from '@/components/Chapter/NextPrevChap'
 import { useFetchData } from '@/composables/fetchData'
-interface ChapterIdProps {
-  params: {
-    comicid: string
-    chaptersid: string
-  }
-}
-export interface ChapterIdData {
-  images: {
-    page: number
-    src: string
-    backup_src: string
-  }[]
-  chapters: {
-    id: number
-    name: string
-  }[]
-
-  chapter_name: string
-  comic_name: string
-}
+import { ChapterIdData, ChapterIdProps } from '@/types/types'
 const ChapterId = async ({ params }: ChapterIdProps) => {
   const sigleChapter = await useFetchData(
     `/comics/${params.comicid}/chapters/${params.chaptersid}`
   )
   const { images, chapter_name, comic_name, chapters }: ChapterIdData =
     sigleChapter
-  const epsodes = [...chapters].reverse()
-  const chapterIdx = epsodes.findIndex(
-    (chapter) => chapter.id === Number(params.chaptersid)
-  )
-
-  console.log(chapterIdx)
 
   return (
     <div>
-      <div className="flex text-[#bebebe] text-sm font-medium justify-center mb-4 space-x-2">
-        <p className="border-r border-r-[#bebebe] pr-2">Chuơng Trước</p>
-        <p>Chương Sau</p>
-      </div>
+      <NextPrevChap propschap={chapters} />
       <ul className="flex flex-col items-center justify-center mx-auto w-full ">
         {images.map((image) => (
           <li key={image.page}>
@@ -46,6 +19,7 @@ const ChapterId = async ({ params }: ChapterIdProps) => {
           </li>
         ))}
       </ul>
+      <NextPrevChap propschap={chapters} />
     </div>
   )
 }

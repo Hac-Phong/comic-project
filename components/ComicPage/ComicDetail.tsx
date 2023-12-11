@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import ImgCard from '../Card/ImgCard'
 interface ComicDetail {
   props: ComicDetailProps
