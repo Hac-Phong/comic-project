@@ -20,8 +20,8 @@ const ComicId = async ({ params }: ComicIdProps) => {
 
   // if (!comicdetail.id) return notFound()
   return (
-    <div className="flex mt-6 w-full">
-      <div className="pl-5 flex w-9/12 flex-col h-full">
+    <div className="px-5 lg:px-0 flex flex-col lg:flex-row mt-6 w-full">
+      <div className="lg:pl-3 flex w-full mb-2 lg:mb-0 lg:w-9/12 flex-col h-full">
         <ComicDetail props={comicdetail} />
         {/* Chapter List */}
         <ComicChapterList props={comicdetail} />
