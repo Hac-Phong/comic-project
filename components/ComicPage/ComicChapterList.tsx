@@ -23,7 +23,6 @@ interface ComicChapterListProps {
   }
 }
 const ComicChapterList = ({ props }: ComicChapterListProps) => {
-  // const chapters = props.chapters
   const [eps, setEps] = useState(props.chapters)
   const [isShow, setIsShow] = useState('bi bi-sort-down-alt')
   const handleIsShow = () => {
@@ -53,7 +52,7 @@ const ComicChapterList = ({ props }: ComicChapterListProps) => {
             href={`/comics/${props.id}/chapters/${chapter.id}`}
             key={chapter.id}
           >
-            <p className="px-5 py-3 h-12 flex items-center justify-center text-[#bebebe] text-lg hover:text-yellow-500 font-medium bg-[#73262ae6] text-center">
+            <p className="px-5 py-3 h-12 items-center overflow-hidden justify-center text-[#bebebe] text-lg hover:text-yellow-500 font-medium bg-[#73262ae6] text-center">
               {chapter.name}
             </p>
           </Link>
