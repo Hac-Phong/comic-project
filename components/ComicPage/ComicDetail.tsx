@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import ImgCard from '../Card/ImgCard'
 interface ComicDetail {
   props: ComicDetailProps
 }
@@ -26,16 +27,17 @@ const ComicDetail = ({ props }: ComicDetail) => {
   const { title, thumbnail, genres, description }: ComicDetailProps = props
 
   return (
-    <div className="flex w-full">
-      <div className="max-w-xs">
-        <Image
+    <div className="flex flex-col space-y-14 items-center lg:flex-row w-full">
+      <div className="max-w-xs h-80 w-96">
+        {/* <Image
           src={thumbnail}
           width={350}
-          height={450}
+          height={405}
           alt={title}
           loading="lazy"
-          className="object-cover"
-        />
+          className="object-cover h-full w-full"
+        /> */}
+        <ImgCard thumbnail={thumbnail} title={title} />
         <button className="btn btn-warning btn-outline w-full mt-1 uppercase text-sm">
           Add to favorite
           <span>
@@ -43,7 +45,7 @@ const ComicDetail = ({ props }: ComicDetail) => {
           </span>
         </button>
       </div>
-      <div className="ml-5 flex flex-col w-full">
+      <div className="lg:ml-5 flex flex-col w-full">
         <div className=" bg-gradient-to-r from-[#000] to-transparent px-5 py-3 ">
           <p className="text-white text-3xl font-medium line-clamp-2 max-w-lg">
             {title}

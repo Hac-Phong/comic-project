@@ -2,6 +2,7 @@ import { useFetchData } from '@/composables/fetchData'
 import Image from 'next/image'
 import React from 'react'
 import Link from 'next/link'
+import ImgCard from '../Card/ImgCard'
 interface RankCardProps {
   id: string
   title: string
@@ -39,6 +40,9 @@ const RankCard = async () => {
               alt={rank.title}
               className=" object-cover h-full"
             />
+            {/* <div className="h-12">
+              <ImgCard thumbnail={rank.thumbnail} title={rank.title} />
+            </div> */}
             <div className="flex flex-col ml-3">
               <p className="text-base group-hover:text-yellow-500 line-clamp-2">
                 {rank.title}

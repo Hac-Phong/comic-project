@@ -25,26 +25,29 @@ interface ComicChapterListProps {
 const ComicChapterList = ({ props }: ComicChapterListProps) => {
   // const chapters = props.chapters
   const [eps, setEps] = useState(props.chapters)
-  const [isShow, setIsShow] = useState<boolean>(false)
+  const [isShow, setIsShow] = useState('bi bi-sort-down-alt')
   const handleIsShow = () => {
-    setEps([...props.chapters].reverse())
+    setEps([...eps.reverse()])
+    setIsShow(
+      isShow === 'bi bi-sort-down' ? 'bi bi-sort-up' : 'bi bi-sort-down'
+    )
   }
 
   return (
     <div className="flex flex-col">
-      <p className="text-[#bebebe] uppercase text-lg mt-8 border-b border-b-[#bebebe] pb-2">
+      <p className="text-[#bebebe] uppercase text-lg pt-14 border-b border-b-[#bebebe] pb-2">
         CHAPTER LIST
       </p>
       <button className=" bg-gradient-to-l py-3 pr-2 from-[#73262ae6] to-transparent flex justify-end">
         <i
           onClick={handleIsShow}
-          className={` text-white text-3xl ${
-            isShow ? 'bi bi-sort-down-alt' : 'bi bi-sort-down-alt'
+          className={`text-white text-3xl transition duration-150 ease-in ${
+            isShow === 'bi bi-sort-down' ? 'bi bi-sort-down' : 'bi bi-sort-up'
           }`}
         ></i>
       </button>
       {/* List */}
-      <div className="grid list  grid-cols-4 gap-1.5 mt-1 max-h-96 overflow-y-auto">
+      <div className="grid list grid-cols-3 lg:grid-cols-4 gap-1.5 mt-1 max-h-96 overflow-y-auto">
         {eps.map((chapter) => (
           <Link
             href={`/comics/${props.id}/chapters/${chapter.id}`}
