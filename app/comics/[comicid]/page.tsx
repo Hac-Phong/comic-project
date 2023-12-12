@@ -8,10 +8,15 @@ import { notFound } from 'next/navigation'
 import { ComicIdProps } from '@/types/types'
 
 const ComicId = async ({ params }: ComicIdProps) => {
-  const [comicdetail, recomend] = await Promise.all([
+  const [comicdetail, newcomic_1, newcomic_2] = await Promise.all([
     useFetchData(`/comics/${params.comicid}`),
-    useFetchData('/recommend-comics'),
+    useFetchData('/new-comics'),
+    useFetchData('/new-comics?page=2'),
   ])
+
+  const newcomic = {
+    comics: [...newcomic_1.comics, ...newcomic_2.comics],
+  }
 
   if (!comicdetail.id) return notFound()
   return (
@@ -21,12 +26,12 @@ const ComicId = async ({ params }: ComicIdProps) => {
         {/* Chapter List */}
         <ComicChapterList props={comicdetail} />
         {/* Chapter List */}
-        {/* <Carousel
+        <Carousel
           autoplay={false}
           items={4}
-          data={recomend}
-          h1={'Recomend Comic'}
-        /> */}
+          data={newcomic.comics}
+          h1={'New Comics'}
+        />
       </div>
       <RankCard />
     </div>

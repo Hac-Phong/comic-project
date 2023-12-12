@@ -27,20 +27,6 @@ const CardImg = ({ props }: CardImgProps) => {
   return (
     <Link href={`/comics/${id}`} className="overflow-hidden group ">
       <div className="overflow-hidden relative">
-        {/* <div className="h-80 max-w-xs w-96">
-          <Image
-            src={err ? imgerr : thumbnail}
-            width={350}
-            height={405}
-            alt={title}
-            onLoad={() => setIsComplete(true)}
-            onError={() => setErr(true)}
-            loading="lazy"
-            className={`object-cover h-full w-full ${
-              isComplete ? 'opacity-100 blur-none' : 'opacity-0 blur-lg'
-            }`}
-          />
-        </div> */}
         <ImgCard thumbnail={thumbnail} title={title} />
         <div className="z-10 absolute bottom-0 w-full h-14 px-3 pb-2 bg-gradient-to-t from-black to-transparent">
           <p className="text-lg truncate font-medium" title={title}>
