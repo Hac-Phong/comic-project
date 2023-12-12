@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 
 const NavBar = () => {
   return (
@@ -16,8 +15,12 @@ const NavBar = () => {
       </Link>
 
       <div className="flex items-center space-x-10 uppercase text-base text-[#bebebe] ml-12 font-semibold">
-        <p>Update</p>
-        <p>FEATURED</p>
+        <Link href="/" className="hover:text-yellow-500">
+          Update
+        </Link>
+        <Link href="/category" className="hover:text-yellow-500">
+          Category
+        </Link>
         <p>Manga</p>
         <p>Creator</p>
         <p>Favorite</p>
