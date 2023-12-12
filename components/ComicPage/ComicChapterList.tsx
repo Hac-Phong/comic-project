@@ -53,7 +53,7 @@ const ComicChapterList = ({ props }: ComicChapterListProps) => {
             key={chapter.id}
           >
             <p className="px-5 py-3 h-12 items-center overflow-hidden justify-center text-[#bebebe] text-lg hover:text-yellow-500 font-medium bg-[#73262ae6] text-center">
-              {chapter.name}
+              {chapter.name.match(/\d+(\.\d+)?/)}
             </p>
           </Link>
         ))}

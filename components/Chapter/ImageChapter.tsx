@@ -14,7 +14,7 @@ const ImageChapter = ({ propsimg }: ImageChapterProps) => {
   return (
     <div>
       <Image
-        src={err ? imgload : propsimg.backup_src}
+        src={err ? imgload : propsimg.src}
         width={550}
         height={550}
         alt=""
